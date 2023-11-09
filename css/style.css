@@ -1,0 +1,400 @@
+:root {
+    --bgcolor: #353a40;
+    /*generalmente el header y footer usan mismo color, así que creo variable con ese color*/
+    --textcolor: white;
+    --ticketcolor: #2aa749;
+    --javascript: #ffc007;
+    --react: #17a2b9;
+    --negocios: #6b757e;
+    --startups: #dc3546;
+    --enviar: #96c93e;
+    --footer: #1e516e;
+
+
+
+}
+
+* {
+    /* Le quito cualquier exceso y ordeno cajas */
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+header {
+    background-color: var(--bgcolor);
+    height: 4.2em;
+    color: var(--textcolor);
+    position: relative;
+    top: 0;
+    z-index: 100;
+    /*como la imagen se cargaba después, se quedaba tapando mi header. así que le agrego z-index para que el header tenga mayor valor (100 solo porque es un número elevado)*/
+    width: 100%;
+    /*como puse z-index, perdió características y ahora le tengo que indicar que ocupe 100% de ancho de la página*/
+
+
+    .navbar {
+        background-color: var(--bgcolor) !important;
+
+        .container {
+            .logo {
+
+                margin-left: 2em !important;
+
+                & img {
+                    /*img está dentro de la clase logo en index.html*/
+                    height: 4em;
+                    /*asi la imagen se vaa comodar sola dentro del header*/
+                    /*vertical-align: middle;/*el elemento que tiene a la par se acomodará a la imagen según dónde está la imagen*/
+                }
+
+                & h2 {
+                    /*h2 es hermano de img*/
+                    /*display: inline-block;/*para que se posicione a la par de la imagen*/
+                    font-size: 16px;
+                    ;
+
+
+                }
+            }
+
+            .barra {
+
+
+                /*display: inline-block;
+                float: right;*/
+                .enlaces {
+
+                    font-size: 14px;
+
+
+                    & a {
+
+                        text-decoration: none;
+                        /*para quitar la decoración de enlace*/
+                        color: var(--textcolor);
+                        margin: 0 0.5em !important;
+                    }
+
+                    .ticket {
+                        color: var(--ticketcolor);
+                    }
+                }
+
+            }
+        }
+
+
+    }
+}
+
+
+
+
+main {
+    .principal {
+        background-color: var(--bgcolor);
+        position: relative;
+        overflow: auto;
+
+
+
+
+        .fondo {
+            filter: brightness(0.5);
+
+
+        }
+
+        .content-principal {
+            position: absolute;
+            top: 50vh;
+            color: var(--textcolor);
+            width: 40%;
+            text-align: right;
+            right: 4em;
+            line-height: 1.5em;
+
+            & p {
+                margin: 1.5em 0 !important;
+            }
+
+            & a {
+                border: 1px solid var(--textcolor);
+                border-radius: 5px;
+                text-decoration: none;
+                color: var(--textcolor);
+                padding: 15px 20px !important;
+                /*15 arriba abajo, 20 a la derecha*/
+                margin: 0 1em !important;
+                /*0 arriba y abajo, 1 a los costados*/
+                text-wrap: nowrap;
+
+            }
+
+            .btn-color {
+                text-wrap: nowrap;
+
+                background-color: var(--ticketcolor);
+                border: 1px solid var(--ticketcolor) !important;
+
+
+
+            }
+
+        }
+    }
+
+    .fila {
+        text-align: center;
+
+        & h4 {
+            font-size: 10px;
+            padding-top: 1em !important;
+        }
+
+        & h2 {
+            font-size: 16px;
+            font-weight: bold;
+            padding-top: 0.2em !important;
+        }
+
+    }
+
+    .oradores {
+        text-align: center;
+        display: flex;
+        flex-flow: row wrap;
+        /*inicialmente row y wrap para cuando me vaya quedando si nespacio*/
+        justify-content: space-evenly !important;
+        /* border: 50em grey !important;*/
+
+        .col-3 {
+            font-size: 12px;
+
+
+            width: 250px;
+
+            & img {
+                width: 100%;
+                padding-top: 0.5em !important;
+                padding-bottom: 1em !important;
+            }
+
+            & p {
+                padding-top: 0.5em !important;
+            }
+
+        }
+
+        .jsEnlace {
+            background-color: var(--javascript);
+            border-color: 1px solid var(--javascript);
+            border: 1px solid var(--javascript);
+            border-radius: 3px;
+            text-decoration: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 3px;
+            margin: 0 1em;
+            color: black;
+
+        }
+
+        .reactEnlace {
+            background-color: var(--react);
+            border-color: 1px solid var(--react);
+            border: 1px solid var(--react);
+            border-radius: 3px;
+            text-decoration: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 3px;
+            margin: 0 1em;
+            color: white;
+
+        }
+
+        .negEnlace {
+
+            background-color: var(--negocios);
+            border-color: 1px solid var(--negocios);
+            border: 1px solid var(--negocios);
+            border-radius: 3px;
+            text-decoration: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 3px;
+            margin: 0 1em;
+            color: white;
+
+        }
+
+        .suEnlace {
+            background-color: var(--startups);
+            border-color: 1px solid var(--startups);
+            border: 1px solid var(--startups);
+            border-radius: 3px;
+            text-decoration: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0 3px;
+            margin: 0 1em;
+            color: white;
+        }
+    }
+}
+
+.hono {
+    margin-top: 1.5em !important;
+    background-color: var(--bgcolor);
+}
+
+.description-honolulu {
+    padding: 1em !important;
+    color: white;
+    font-size: 13px;
+    align-self: self-start;
+
+    & p {
+        margin-bottom: 1em !important;
+    }
+
+    & a {
+
+
+        border: 1px solid var(--textcolor);
+        border-radius: 5px;
+        text-decoration: none;
+        color: var(--textcolor);
+        padding: 5px !important;
+
+    }
+}
+
+.formulario {
+    padding: 0 20vw !important;
+    padding-bottom: 1em !important;
+    display: flex;
+    flex-flow: row wrap;
+    /*inicialmente row y wrap para cuando me vaya quedando si nespacio*/
+    justify-content: space-evenly !important;
+    margin-top: 1em !important;
+
+    .convertirse {
+        .p1 {
+
+            font-size: 9px;
+        }
+
+        & h2 {
+            font-size: 22px;
+
+        }
+
+        .p2 {
+            font-size: 10px;
+            padding: 0.5em !important;
+
+            & u {
+                text-decoration-style: dotted;
+            }
+        }
+    }
+
+    .datos {
+
+
+
+        .nombres {
+            padding: 0.5em !important;
+
+
+
+
+        }
+
+        .hablar {
+            text-align: start !important;
+            padding: 5px !important;
+
+
+            & p {
+                font-size: 10px !important;
+                color: grey;
+                margin-top: 0.5em !important;
+            }
+        }
+
+    }
+
+    .btn {
+        background-color: var(--enviar);
+        border: none;
+    }
+
+
+}
+
+
+footer {
+
+    padding: 2.5em 0 !important;
+    background-color: var(--footer);
+    text-align: center;
+
+
+
+    & a {
+
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+.tickets-main {
+    display: flex !important;
+    justify-content: center !important;
+    
+}
+
+.cuadrados {
+    height: 200px;
+      
+    text-align: center;
+    justify-content: center !important;
+    
+
+    & h5 {
+        font-weight: bold;
+        margin: 15px !important;
+    }
+    & h6 {
+        margin: 15px !important;
+    }
+
+    & p {
+        font-size: 12px;
+        margin: 15px !important;
+    }
+    
+    
+    
+    }
+
+    h7 {
+        font-weight: bold;
+        font-size: 30px;
+        padding-bottom: 10px !important;
+    }
+    
